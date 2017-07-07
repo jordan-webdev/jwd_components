@@ -1,0 +1,13 @@
+.intro {
+  border-bottom: 1px solid darken(white, 10%);
+  padding-bottom: rem(25);
+
+  &__title {
+    margin-top: rem(25);
+    margin-bottom: rem(20);
+  }
+
+  &__text {
+    max-width: rem(1200);
+  }
+}
