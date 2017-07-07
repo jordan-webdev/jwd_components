@@ -1,0 +1,27 @@
+$shown: rem(680);
+
+.cta-thin {
+  display: none;
+
+  @media screen and (min-width: $tablet) {
+    @include flexbox;
+
+    @include justify-content(space-between);
+
+    @include align-items(center);
+
+    padding-top: rem(35);
+    padding-bottom: rem(35);
+  }
+
+  &__content {
+    @include flex-grow(1);
+
+    margin-right: rem(35);
+  }
+
+  &__title {
+    font-size: rem(18);
+    margin-bottom: rem(5);
+  }
+}
