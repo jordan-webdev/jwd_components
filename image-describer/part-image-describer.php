@@ -1,7 +1,7 @@
 <?php
 /*
- * Image Describer. Image on one side, title + text on the other
- * Optional link
+ * Image Describer. Image on one side, title + text + link on the other
+ * Optional link and title
  */
 
 $img = get_field('image_describer_img');
@@ -32,7 +32,9 @@ $img_class = $reversed ? $img_class : $img_class .' image-describer__image--reve
       <img class="<?php echo esc_attr($img_class); ?>" src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>">
     </div>
     <div class="image-describer__content image-describer__half">
-      <h2 class="image-describer__title"><?php echo esc_html($title); ?></h2>
+      <?php if ($title): ?>
+        <h2 class="image-describer__title"><?php echo esc_html($title); ?></h2>
+      <?php endif; ?>
       <div class="image-describer__text">
         <?php echo $text; ?>
       </div>
