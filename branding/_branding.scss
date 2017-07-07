@@ -1,0 +1,38 @@
+.branding {
+  padding-top: rem(20);
+  padding-bottom: rem(60);
+  display: none;
+
+  @media screen and (min-width: $breakpoint__mobile-menu) {
+    @include flexbox;
+  }
+
+  &__info {
+    @include flex-grow(1);
+
+    @include justify-content(flex-end);
+
+    margin-top: 25px;
+  }
+
+  &__info-item {
+    margin-right: 5%;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__icon {
+    margin-right: 13px;
+  }
+
+  &__label {
+    font-size: rem(16);
+    margin-bottom: 7px;
+  }
+
+  &__detail {
+    font-size: rem(16);
+  }
+}
