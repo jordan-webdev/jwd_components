@@ -1,4 +1,4 @@
-$two_col: rem(1040);
+$two_col: rem(940);
 
 .image-describer {
   @include flexbox;
@@ -21,7 +21,7 @@ $two_col: rem(1040);
     text-align: left;
   }
 
-  &--border {
+  &__wrapper--border {
     position: relative;
 
     &::after {
@@ -42,7 +42,7 @@ $two_col: rem(1040);
       background: radial-gradient(ellipse, #e4e4e4, #f9f9f9, transparent);
     }
 
-    &:last-child:after {
+    &:last-child::after {
       display: none;
     }
   }
@@ -50,10 +50,16 @@ $two_col: rem(1040);
   @media screen and (min-width: $two_col) {
     &--reversed &__half:first-child {
       @include order(2);
+
+      text-align: left;
+      padding-right: 0;
     }
 
     &--reversed &__half:last-child {
       @include order(1);
+
+      text-align: right;
+      padding-right: 10%;
     }
   }
 
@@ -62,6 +68,15 @@ $two_col: rem(1040);
 
     @media screen and (min-width: $two_col) {
       flex-basis: 50%;
+    }
+
+    &:first-child {
+      text-align: center;
+
+      @media screen and (min-width: $two_col) {
+        text-align: right;
+        padding-right: 10%;
+      }
     }
   }
 
@@ -78,12 +93,8 @@ $two_col: rem(1040);
   }
 
   &__text {
-    max-width: 90%;
-
     @media screen and (min-width: $two_col) {
       flex-basis: 50%;
-      margin-left: 0;
-      margin-right: 0;
     }
 
     p {
