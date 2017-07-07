@@ -1,7 +1,7 @@
 <?php
 /*
  * Image Describer. Image on one side, title + text + link on the other
- * Optional link and title
+ * Optional title and link
  */
 
 $img = get_field('image_describer_img');
