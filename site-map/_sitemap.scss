@@ -35,7 +35,7 @@ $mobile_last_item: 6;
     margin: rem(20);
     text-align: center;
     padding: rem(25);
-    border: 1px solid darken(white, 15%);
+    border: 1px solid #50595D;
 
     &:first-child {
       max-width: none;
@@ -83,10 +83,6 @@ $mobile_last_item: 6;
     margin-right: 3%;
     margin-top: rem(25);
 
-    //  @media screen and (min-width: $tablet) {
-    //margin-right: 7%;
-    //  }
-
     &:first-child {
       max-width: rem(230);
     }
@@ -125,5 +121,4 @@ $mobile_last_item: 6;
   & div[class*="menu"]:first-of-type:last-of-type {
     min-height: 0;
   }
-
 }
