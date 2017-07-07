@@ -1,6 +1,7 @@
 <?php
 /*
  * Breadcrumb. Includes Page title and breadcrumb
+ * Requires Breadcrumb NavXT https://en-ca.wordpress.org/plugins/breadcrumb-navxt/
  */
 ?>
 <div class="padding-site breadcrumb__wrapper" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/breadcrumb-bg.jpg)">
