@@ -1,0 +1,12 @@
+.slide-toggle-icon {
+  transition: color 0.3s;
+  float: right;
+  cursor: pointer;
+  
+  &.is-active{
+    -ms-transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+    color: #9cd2e9;
+  }
+}
