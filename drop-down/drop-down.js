@@ -65,6 +65,12 @@ function doDDL(btn, animateIn, animateOut) {
     }
 
   }); //Button click
+  
+  //Show the dropdown for desktop
+  var mq = window.matchMedia( "(min-width: 765px)" );
+  if (mq.matches){
+    btn.click();
+  }
 
   //Match Widths
   $('.drop-down__list').each(function() {
