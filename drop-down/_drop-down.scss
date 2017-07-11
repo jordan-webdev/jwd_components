@@ -1,0 +1,46 @@
+.drop-down {
+  //For z-index later, assigned through jQuery
+  position: relative;
+  max-width: rem(250);
+
+  &__btn {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+    width: 100%;
+  }
+
+  &__caret {
+    @include transform(rotate(0));
+
+    transition: transform 0.3s;
+    float: right;
+    position: relative;
+    top: rem(-1);
+
+    &.active {
+      @include transform(rotate(-180deg) !important);
+    }
+  }
+
+  &__list {
+    position: absolute;
+    display: none;
+    top: 100%;
+    left: 0;
+    min-width: 100%;
+    max-width: 100%;
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    background-color: white;
+    border: 1px solid $color__highlight;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+
+  &__item {
+    & + &__item {
+      margin-top: 0.8em;
+    }
+  }
+}
