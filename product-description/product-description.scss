@@ -1,0 +1,43 @@
+$shift: rem(1000);
+
+.product-description {
+  &__grid {
+    @media screen and (min-width: $shift) {
+      @include flexbox;
+    }
+  }
+
+  &__title {
+    margin-bottom: rem(15);
+
+    @media screen and (min-width: $shift) {
+      margin-bottom: rem(25);
+    }
+  }
+
+  &__image-wrapper {
+    @include flex-shrink(0);
+  }
+
+  &__content {
+    @include flex-grow(1);
+
+    @include flex-basis(rem(480));
+  }
+
+  & p {
+    margin-bottom: rem(25);
+  }
+
+  &__cta-btns {
+    margin-bottom: rem(-15);
+  }
+
+  & .btn {
+    margin-bottom: rem(15);
+  }
+
+  &__image[src="about:blank"] {
+    display: none;
+  }
+}
