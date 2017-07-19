@@ -1,0 +1,41 @@
+$tablet: rem(600);
+
+.related-items {
+  text-align: center;
+  margin-top: rem(25);
+  margin-bottom: rem(25);
+
+  @media screen and (min-width: $tablet) {
+    margin-top: rem(30);
+    margin-bottom: rem(30);
+  }
+
+  &__title {
+    margin-bottom: rem(25);
+  }
+
+  &__item {
+    background-color: darken(white, 5%);
+    border: 1px solid darken(white, 15%);
+    padding: rem(10);
+  }
+
+  &__image-wrapper {
+    @include flex-basis(rem(114));
+
+    @include flex-shrink(0);
+
+    margin-right: rem(20);
+  }
+
+  &__item-title {
+    font-size: rem(16);
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.2;
+  }
+
+  .slick-initialized .slick-slide {
+    @include flexbox;
+  }
+}
