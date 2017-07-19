@@ -1,7 +1,7 @@
 <?php
 /*
  * Related Items.
- * Title, slick slider of items that link (Image, title)
+ * Title, slider of items that link (Image, title)
  */
 
 $current_id = $post->ID;
