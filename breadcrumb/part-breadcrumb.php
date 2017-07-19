@@ -4,7 +4,8 @@
  * Requires Breadcrumb NavXT https://en-ca.wordpress.org/plugins/breadcrumb-navxt/
  */
 
-$title = is_category() ? strtoupper(single_cat_title('', false)) : strtoupper(get_the_title());
+//Archive title for archives (including category), with fallback to the_title for single
+$title = is_archive() ? strtoupper(str_replace(array("Archives: ", "Category: "), "", get_the_archive_title())) : strtoupper(get_the_title());
 ?>
 <div class="padding-site breadcrumb__wrapper" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/breadcrumb-bg.jpg)">
   <header class="breadcrumb color-white container-site">
