@@ -1,0 +1,259 @@
+$shift: rem(977);
+$headers_shift: rem(720);
+$configure_shift: rem(720);
+$toggle_shift: rem(900);
+$grey: darken(white, 5%);
+
+.product-chart {
+  margin-bottom: rem(35);
+
+  @media screen and (min-width: $shift) {
+    margin-bottom: rem(55);
+  }
+
+  @media screen and (min-width: $shift) {
+    &__header-links {
+      @include flexbox;
+    }
+  }
+
+  &__header-link {
+    border-right: 1px solid darken(white, 35%);
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  &__grid {
+    @media screen and (min-width: $shift) {
+      @include flex-direction(row);
+    }
+  }
+
+  &__information {
+    //Shift sections to bottom (part 1/2 to bring add-to-cart to the top)
+    @include order(2);
+
+    @media screen and (min-width: $shift) {
+      @include order(1);
+
+      margin-right: rem(15);
+    }
+  }
+
+  &__title {
+    background-color: $grey;
+    padding-top: rem(15);
+    padding-bottom: rem(15);
+    font-size: rem(14);
+    margin-top: rem(15);
+    margin-bottom: rem(10);
+    padding-left: rem(15);
+    padding-right: rem(15);
+
+    @media screen and (min-width: $shift) {
+      padding-left: rem(35);
+      padding-right: rem(35);
+    }
+  }
+
+  @media screen and (min-width: $toggle_shift) {
+    &__collapse-toggle {
+      display: none;
+    }
+  }
+
+  /* ======================================================== */
+  /* CONFIGURE Options */
+  /* ======================================================== */
+
+  //Hide plugin items
+  & .tm-epo-required, & .tc-epo-totals {
+    display: none !important;
+  }
+
+  //Hide WooCommerce items
+  & .quantity, & .single_add_to_cart_button {
+    display: none;
+  }
+
+  //Extend length of fields
+  & .tm-epo-field-label.tm-left + .tm-extra-product-options-container, .tm-epo-field-label.tm-right + .tm-extra-product-options-container {
+    max-width: none;
+  }
+
+  //The entire field
+  &__field-div {
+    @include align-items(center);
+
+    margin-top: rem(15) !important;
+
+    @media screen and (min-width: $configure_shift) {
+      @include flexbox;
+    }
+
+    & ~ div:not(.cpfclear) {
+      margin-top: rem(15) !important;
+
+      @include align-items(center);
+
+      @media screen and (min-width: $configure_shift) {
+        @include flexbox;
+      }
+    }
+  }
+
+  //Wrapper for options (inside the entire field)
+  & .tm-epo-field-label.tm-left + .tm-extra-product-options-container {
+    width: 100% !important;
+
+    @media screen and (min-width: $configure_shift) {
+      width: auto !important;
+    }
+  }
+
+  //The text label
+  & .tm-epo-field-label {
+    display: block;
+    margin-bottom: rem(15);
+
+    @media screen and (min-width: $configure_shift) {
+      text-align: right;
+      margin-bottom: 0;
+    }
+  }
+
+  //The li that wraps the select + price in brackets
+  & .tm-extra-product-options ul.tmcp-elements:not(.tm-extra-product-options-variations) li.tmcp-field-wrap:not(.tm-per-row) {
+    @include flexbox;
+
+    @include align-items(center);
+
+    @media screen and (min-width: $configure_shift) {
+      display: block;
+    }
+  }
+
+  //The label element wrapping the select (not the text one)
+  & .tm-extra-product-options .tmcp-field-wrap label {
+    display: inline !important;
+
+    @include flex-grow(1);
+
+    @media screen and (min-width: $configure_shift) {
+      display: inline-block !important;
+    }
+  }
+
+  //The select
+  & select {
+    max-width: 100%;
+
+    @media screen and (min-width: $configure_shift) {
+      width: rem(400);
+    }
+  }
+
+  //The first section of the price text ( "(+" of "(+ $0.00) )"
+  & .before-amount {
+    margin-left: rem(10);
+  }
+
+  /* ======================================================== */
+  /* Specifications */
+  /* ======================================================== */
+  &__specification {
+    padding-top: rem(15);
+    padding-bottom: rem(12);
+    border-bottom: 1px solid darken(white, 10%);
+
+    @media screen and (min-width: $configure_shift) {
+      @include flex-direction(row);
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__specification-label {
+    margin-right: rem(15);
+    margin-bottom: rem(15);
+
+    @media screen and (min-width: $configure_shift) {
+      margin-bottom: rem(0);
+      text-align: right;
+    }
+  }
+
+  &__specification-value {
+    padding-left: rem(20);
+
+    //Move it up to accomodate line height;
+    margin-top: rem(-3.5);
+  }
+
+  /* ======================================================== */
+  /* PDFs */
+  /* ======================================================== */
+  .product-chart__pdf-wrapper {
+    @media screen and (min-width: $shift) {
+      padding-left: rem(15);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  /* ======================================================== */
+  /* Add-to-cart */
+  /* ======================================================== */
+
+  &__add-to-cart {
+    margin-top: rem(15);
+    padding-top: rem(30);
+    background-color: $grey;
+
+    @include flex-shrink(0);
+
+    //Shift to top (part 1/2 to bring add-to-cart to the top)
+    @include order(1);
+
+    @media screen and (min-width: $shift) {
+      max-width: rem(233);
+    }
+  }
+
+  &__add-btn {
+    margin-bottom: rem(15);
+  }
+
+  &__qty-wrapper {
+    margin-bottom: rem(20);
+
+    @media screen and (min-width: $shift) {
+      margin-bottom: rem(40);
+    }
+  }
+
+  &__qty-text {
+    margin-right: rem(5);
+    color: darken(white, 35%);
+  }
+
+  &__qty {
+    max-width: rem(75);
+    padding: rem(10);
+  }
+
+  & .jwd-woocommerce-products__stock-message {
+    padding-left: rem(15);
+    padding-right: rem(15);
+  }
+
+  & .fa-phone {
+    margin-right: rem(5);
+  }
+}
