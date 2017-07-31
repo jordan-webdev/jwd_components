@@ -20,7 +20,7 @@ get_header();
       			while ( have_posts() ) : the_post();
       			?>
 
-      			<section id="two-column-wrapper" class="clear site-container">
+      			<section class="two-column-wrapper flex flex-wrap" class="clear site-container">
       				<div class="two-column-item">
       					<?php get_template_part('template-parts/part', 'category-select-column'); ?>
       				</div>
@@ -42,3 +42,4 @@ get_header();
 
 <?php
 get_footer();
+
