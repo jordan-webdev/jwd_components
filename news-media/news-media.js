@@ -1,108 +1,74 @@
-(function($){
+(function($) {
 
-	/* ********** *CATEGORY SELECT + DESCRIPTION ******************* */
-	//All
-	$('.all-categories-selector').click( function () {
-			$('#categories span').removeClass('color-primary')
-			$(this).addClass('color-primary');
-			var allItems = $('.blog-item-wrapper');
-			var theItem = allItems;
-			showImages(allItems, theItem);
-	});
-	$('#category-wrapper h2').click( function () {
-		toggleExpand( $('#categories'), $(this));
-	});
-	$('#categories span').click( function () {
-		toggleExpand( $('#categories'), $('#category-wrapper h2'));
-	});
+  /* ********** *CATEGORY SELECT + DESCRIPTION ******************* */
 
-	var mq = window.matchMedia( "(max-width: 800px)" );
-	if ( mq.matches ) {
-		$('#categories').css('top', '-' + $('#categories').height() + 'px');
-	}
+  // Ajax load content on link click
+  $('body').on('click', '#categories a, .js-blog-ajax-link, .pagination-wrapper a', function(e){
+    var slug = $(this).attr('data-slug');
+    var href = $(this).attr('href');
+    var target = $('.js-ajax-content-container');
+    var singleSlug = $(this).attr('data-single-slug');
 
-	function toggleExpand ( categories, arrowHeader ) {
-		categories.toggleClass('expand-categories').toggleClass('expanded-categories');
-		arrowHeader.toggleClass('rotate-arrow-after');
-	}
+    //Results
+    target.fadeOut();
+    target.load(href + ' .js-category-results', function(){
+      //var newURL = singleSlug ? '/new_era/blog/' + slug + '/' + singleSlug:  '/new_era/blog/' + slug + '/';
+      var getUrl = window.location;
+      var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+      //var newURL = href.replace(baseUrl, '');
+      var newURL = href.replace('https://dolcedev.com', '');
+      window.history.replaceState( {} , '', newURL );
 
-	//News Media
-	var newsCookie = Cookies.get('newsCookie');
-	var newsCookieNice = Cookies.get('newsCookieNice');
+      //Give phones some extra time to load
+      let mq = window.matchMedia( "(max-width: 450px)" );
+      if (mq.matches){
+        setTimeout(function(){
+          target.fadeIn('slow');
+        }, 200);
+      }else{
+        target.fadeIn('slow');
+      }
 
-	if (newsCookie) {
-		$('#categories span:contains("' + newsCookie + '")').addClass('color-primary');
-	}
-	else {
-		$('#categories span:first-child').addClass('color-primary');
-	}
-	var allPosts = $('.blog-item-wrapper');
-	var thePosts = allPosts;
+    });
 
-	if (newsCookieNice && newsCookieNice != 'all') {
-		thePosts = $('.blog-item-wrapper.' + newsCookieNice);
-	} else {
-		//var thePosts = $('.blog-item-wrapper.' + $('#categories span:nth-child(2)').attr('data-category'));
-		thePosts = allPosts
-	}
+    //Pagination
+    var paginationTarget = $('.ajax-pagination');
+    paginationTarget.fadeOut();
+    paginationTarget.load(href + ' .js-ajax-pagination', function(){
+      paginationTarget.fadeIn();
+    });
 
-	if (newsCookie == 'All') {
-		thePosts = allPosts;
-	}
+    //Document title
+    $('title').load(href + ' title', function(data){
+       document.title = $(this).text();
+    })
 
-	showImages(allPosts, thePosts);
+    //Scroll page
+    $('html,body').animate({ scrollTop: ($('#category-wrapper').offset().top - 150) }, 'slow');
 
-	$('#categories span').click( function () {
-		$('#categories span').removeClass('color-primary');
-		$(this).addClass('color-primary');
-		var thePosts = $('.blog-item-wrapper.' + $(this).attr('data-category') );
-		showImages(allPosts, thePosts);
-	})
+    return false;
+  });
 
-	function showImages(allItems, theItem) {
-		/* $('#ajax-loader').animate({
-				opacity: 1
-		}, 200); */
-		allItems.each( function () {
-			$(this).animate({
-				opacity: 0
-			}, 500, function () {
-				$(this).css('display', 'none');
-			});
-		}).promise().done( function () {
-			theItem.each( function () {
-				var theImage = $(this).find('img');
-				$(this).css('display', 'block');
-				if (theImage.attr('src') == '') {
-					theImage.attr('src', theImage.attr('data-src'));
-				}
-				$(this).animate({
-					opacity: 1
-				}, 500);
-			}).promise().done( function () {
-				/* $('#ajax-loader').animate({
-					opacity: 0
-				}, 200); */
-			});
-		});
+  // Color highlighting
+  $('#categories span').click(function() {
+    $('#categories span.color-primary').removeClass('color-primary');
+    $(this).addClass('color-primary');
+  });
 
-	}
+  $('body').on('click', '.js-blog-ajax-link', function(){
+    var slug = $(this).attr('data-slug');
+    $('#categories span.color-primary').removeClass('color-primary');
+    $('#categories span[data-slug="' + slug + '"]').addClass('color-primary');
+  })
 
-	//Single page
-
-	if (newsCookieNice == 'all'){
-		$('.blog-category').text('all categories');
-	}
-	$('#categories span').each(function(){
-		$(this).removeClass('color-primary');
-	});
-	$('#categories span:contains("' + Cookies.get('newsCookie') + '")').addClass('color-primary');
-
-	$('#categories span').click( function () {
-		Cookies.remove('newsCookie');
-		Cookies.set('newsCookie', $(this).text());
-		Cookies.remove('newsCookieNice');
-		Cookies.set('newsCookieNice', $(this).attr('data-category'));
-	});
+  //Categories dropdown
+  var mq = window.matchMedia("(max-width: 850px)");
+  if (mq.matches) {
+    $('#categories-wrapper').slideUp(1, function(){});
+    $('.js-categories-wrapper-toggle, .js-category-selector-link').on('click', function(){
+      $('#categories-wrapper').slideToggle();
+      $('.js-categories-wrapper-toggle').toggleClass('active');
+    });
+  }
 
 })(jQuery)
