@@ -1,3 +1,15 @@
+<?php
+  // Setup the query for pagination (insert this before the loop)
+  global $wp_query; $tmp_query = $wp_query; $wp_query = null; $wp_query = $query;
+?>
+
+<!-- Pagination -->
+<div class="ajax-pagination">
+  <?php ajax_query_pagination($wp_query, $tmp_query); ?>
+</div>
+
+
+<?php // functions.php 
 function ajax_query_pagination($wp_query, $tmp_query){
   /* PAGINATION */
   $big = 999999999; // need an unlikely integer
