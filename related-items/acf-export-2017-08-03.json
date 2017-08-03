@@ -1,0 +1,66 @@
+[
+    {
+        "key": "group_598385a24e93c",
+        "title": "Related Items",
+        "fields": [
+            {
+                "key": "field_598385c04d66a",
+                "label": "Title",
+                "name": "related_items_title",
+                "type": "text",
+                "instructions": "The title text to use before the listing of related items.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_598385eb4d66b",
+                "label": "Related Items",
+                "name": "related_items_parent",
+                "type": "post_object",
+                "instructions": "Select which parent page this module will display child pages from.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "post_type": [
+                    "page"
+                ],
+                "taxonomy": [],
+                "allow_null": 0,
+                "multiple": 0,
+                "return_format": "id",
+                "ui": 1
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page",
+                    "operator": "==",
+                    "value": "1012"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    }
+]
