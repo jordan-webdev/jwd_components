@@ -1,10 +1,10 @@
 <?php
 /**
- * Template part for displaying the FAQs.
+ * Template part for displaying taxonomy posts in the style of accordions.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package parente_borean
+ * @package jwd
  */
 
 ?>
