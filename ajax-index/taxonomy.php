@@ -1,7 +1,7 @@
 <?php
 /**
- * The template for displaying blog posts, with the custom blog taxonomy (in order to preserve the "Products"
- * category base)
+ * The template for displaying an index of taxonomy custom posts with ajax animations
+ *
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -9,6 +9,10 @@
  */
 
 get_header();
+
+$query_obj = get_queried_object();
+$tax = $query_obj->taxonomy;
+
 ?>
 
 	<div id="primary" class="content-area">
@@ -27,9 +31,14 @@ get_header();
               <!-- Results -->
       				<div class="two-column-item js-ajax-content-container">
 								<div class="height-100 js-category-results">
-		              <?php while ( have_posts() ) : the_post(); ?>
-		                <?php get_template_part('template-parts/part', 'category-description-column'); ?>
-		              <?php endwhile; ?>
+		              <?php
+									while ( have_posts() ) : the_post();
+											if ($tax == "blog"){
+												get_template_part('template-parts/part', 'category-description-column');
+											} else{
+												 get_template_part('template-parts/part', 'tax-accordions');
+											}
+		              endwhile; ?>
 								</div>
       				</div>
       			</div>
