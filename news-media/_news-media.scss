@@ -334,28 +334,15 @@ $categories_shift: rem(850);
 }
 
 /* ======================================================== */
-/* FAQ */
+/* Tax Accordions */
 /* ======================================================== */
-$page_id: 729;
 
-@media screen and (max-width: 750px) {
-  .page-id-#{$page_id} {
-    //min-height: 100vh;
-
+.tax-accordions {
+  &__accordion {
+    margin-bottom: rem(15);
   }
-}
 
-.page-id-#{$page_id} .two-column-item-wrapper h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  cursor: pointer;
-  max-width: 90%;
-}
-
-.faq {
-  margin-bottom: rem(15);
-
-  &__question {
+  &__toggler {
     padding: rem(10) rem(15);
   }
 
@@ -369,7 +356,7 @@ $page_id: 729;
     @include transform(rotate(0deg));
   }
 
-  &__answer {
+  &__pullout {
     display: none;
     margin-top: rem(15);
 
