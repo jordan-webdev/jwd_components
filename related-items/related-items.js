@@ -5,6 +5,9 @@ $('.js-related-items__list').owlCarousel({
   arrows: true,
   navText: ['<button type="button" class="owl-prev"><span class="fa fa-chevron-left"></span> Prev</button>','<button type="button" class="owl-next">Next <span class="fa fa-chevron-right"></span></button>'],
   responsive: {
+    1350: {
+      items: 4,
+    },
     1050: {
       items: 3
     },
