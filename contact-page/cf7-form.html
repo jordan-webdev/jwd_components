@@ -1,0 +1,19 @@
+<section class="contact-form contact-form--no-bg contact-page__cf7-form">
+  <div class="contact-form__fields flex flex-wrap space-between">
+    [text* first-name class:contact-form__field placeholder "First Name*"]
+    [text* last-name class:contact-form__field placeholder "Last Name*"]
+    [email* email class:contact-form__field placeholder "Email*"]
+    [tel phone class:contact-form__field placeholder "Phone"]
+    [honeypot gender]
+    <!-- Drop down -->
+    <div class="drop-down drop-down--full-width mar-b-15">
+      <button type="button" class="drop-down__btn btn contact-form__products-btn flex space-between align-center">Services interested in <span class="fa fa-caret-down drop-down__caret right--float" aria-hidden="true"></span></button>
+      <div class="drop-down__list">
+         [checkbox products use_label_element class:contact-form__products "Embedded Boards" "Embedded Systems" "Displays" "Memory & Storage" "CPCI/VME/VPX"]
+      </div>
+    </div>
+    [textarea* message class:contact-form__field class:contact-form__message placeholder "Message*"]
+  </div>
+
+  [submit class:btn class:btn--block class:margin-auto "Send Request"]
+</section>
