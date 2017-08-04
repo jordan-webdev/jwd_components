@@ -1,0 +1,62 @@
+$title_shift: rem(450);
+$two_col: rem(800);
+
+.index-careers {
+  margin-top: rem(25);
+  margin-bottom: rem(25);
+  background-color: darken(white, 3%);
+  padding: rem(10) rem(25);
+
+  @media screen and (min-width: $two_col) {
+    @include justify-content(space-between);
+
+    margin-bottom: rem(35);
+  }
+
+  &__archive-title {
+    margin-top: rem(25);
+
+    @media screen and (min-width: $two_col) {
+      margin-top: rem(30);
+    }
+  }
+
+  &__career {
+    width: 100%;
+    border-bottom: 1px solid darken(white, 8%);
+    padding-top: rem(10);
+    padding-bottom: rem(10);
+
+    &:last-child {
+      margin-bottom: 0;
+      border-bottom: 0;
+    }
+
+    @media screen and (min-width: $two_col) {
+      width: 48%;
+    }
+  }
+
+  @media screen and (min-width: $two_col) {
+    &--even &__career:nth-last-child(2) {
+      margin-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+
+  @media screen and (min-width: $title_shift) {
+    &__title {
+      @include flex-direction(row);
+
+      @include align-items(center);
+    }
+  }
+
+  &__pdf-icon {
+    margin-bottom: rem(5);
+
+    @media screen and (min-width: $two_col) {
+      margin-bottom: 0;
+    }
+  }
+}
