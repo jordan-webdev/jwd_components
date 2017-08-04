@@ -1,0 +1,49 @@
+$shift: rem(800);
+$tablet: rem(550);
+
+.tabbed-layout {
+  margin-bottom: rem(25);
+
+  @media screen and (min-width: $shift) {
+    margin-bottom: rem(45);
+  }
+
+  &__tabs {
+    border-bottom: 1px solid black;
+  }
+
+  &__tab {
+    padding: rem(15) 5%;
+    background-color: darken(white, 15%);
+    border-right: 1px solid white;
+    font-size: rem(12);
+
+    @media screen and (min-width: $tablet) {
+      font-size: rem(16);
+    }
+
+    &.active {
+      background-color: $color__secondary;
+    }
+
+    &:last-child {
+      border-right: 0;
+    }
+  }
+
+  &__contents {
+    padding-top: rem(25);
+
+    @media screen and (min-width: $shift) {
+      padding-top: rem(45);
+    }
+  }
+
+  &__content {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}
