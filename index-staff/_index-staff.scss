@@ -1,0 +1,33 @@
+$three_col: rem(950);
+$two_col: rem(680);
+
+.index-staff {
+  @media screen and (min-width: $two_col) {
+    margin-right: -10%;
+  }
+
+  @media screen and (min-width: $three_col) {
+    margin-right: -8%;
+  }
+
+  &__card {
+    width: 100%;
+    margin-bottom: rem(35);
+
+    @media screen and (min-width: $two_col) {
+      width: 50%;
+      padding-right: 10%;
+    }
+
+    @media screen and (min-width: $three_col) {
+      width: 33%;
+      padding-right: 8%;
+    }
+  }
+
+  &__content {
+    @media screen and (min-width: $two_col) {
+      padding-left: rem(45);
+    }
+  }
+}
