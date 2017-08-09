@@ -117,14 +117,6 @@
   });
   $('.tm-epo-field-label, .product-chart__specification-label').width(greatestWidth);
 
-  //Equal width Selects
-  /*var greatestWidth = 0;
-  $('select.tmcp-field').each(function(){
-    var width = $(this).width();
-    greatestWidth = width > greatestWidth ? width : greatestWidth;
-  });
-  $('select.tmcp-field').width(greatestWidth);*/
-
   //Add price addition to Select Options
   var currency = $('.jwd-woocommerce-products__currency-symbol').first().text();
   $('select.tmcp-field option').each(function() {
@@ -134,7 +126,7 @@
     $(this).text(newText);
   });
 
-  //Scrolling add-to-cart module
+  //Scrolling up-arrow module
   $(window).on('scroll', function(){
     var windowTop = $(this).scrollTop();
     var threshold = 1700;
@@ -153,15 +145,34 @@
   let mq = window.matchMedia( "(max-width: 900px)" );
   if (mq.matches){
     $('.product-chart__collapse-area').slideToggle(1);
-    //$(this).parent().next('.product-chart__collapse-area').slideToggle();
 
     $('.product-chart__collapse-toggle').on('click', function(){
+
+        var delayed_slide_start = 550;
+
+        // Scroll to the top first to avoid issued with scroll and expanding
+        $('html, body').animate({
+          scrollTop: $('.product-chart__information').offset().top,
+        }, delayed_slide_start);
+
+
       var toggleChevron = $(this).find('.fa');
       $('.product-chart__collapse-toggle .fa').not(toggleChevron).addClass('fa-chevron-up').removeClass('fa-chevron-down');
       toggleChevron.toggleClass('fa-chevron-up').toggleClass('fa-chevron-down');
       var toggleItem = $(this).parent().next('.product-chart__collapse-area');
-      $('.product-chart__collapse-area').not(toggleItem).slideUp();
-      toggleItem.slideToggle();
+      $('.product-chart__collapse-area').not(toggleItem).slideUp(500);
+
+      // Expand/collapse the container and scroll to it
+      var anchor_point_selector = $(this).parent();
+
+      toggleItem.slideToggle(delayed_slide_start, function(){
+        $('html, body').animate({
+          scrollTop: anchor_point_selector.offset().top,
+        }, 500);
+      });
+
+
+
     });
   }
 
