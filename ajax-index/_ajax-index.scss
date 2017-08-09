@@ -109,13 +109,19 @@ $categories_shift: rem(850);
   font-size: 18px;
 }
 
-#ajax-loader {
-  opacity: 0;
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  z-index: 2;
+.two-column-item {
+  &__ajax-loader {
+    position: absolute;
+    left: 50%;
+    top: rem(80);
+    display: none;
+
+    @include transform(translate(-50%, 0%));
+
+    &.active {
+      display: block;
+    }
+  }
 }
 
 @media screen and (max-width: $categories_shift) {
