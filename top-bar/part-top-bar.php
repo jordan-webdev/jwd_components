@@ -5,7 +5,7 @@
  */
  ?>
 
-<div class="top-bar__wrapper font-primary color-secondary--bg color-white padding-site">
+<div class="top-bar__wrapper font-primary color-tertiary--bg color-white padding-site">
 
   <div class="top-bar container-site">
 
@@ -35,7 +35,7 @@
       <!-- Login -->
       <a class="top-bar__login" href="<?php echo get_permalink(59); ?>">
         <?php fa('sign-in'); ?>
-        <span>Login / Register</span>
+        <span><?php echo (is_user_logged_in() ? "My Account" : "Login / Register"); ?></span>
       </a>
 
       <!-- Cart -->
@@ -45,7 +45,7 @@
         title="<?php _e('View your shopping cart'); ?>"
       >
         <?php fa('shopping-cart', 'top-bar__cart_icon'); ?>
-        <span class="top-bar__total color-black"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+        <span class="top-bar__total color-black color-white--bg"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
         <span class="top-bar__cost"><?php echo WC()->cart->get_cart_total(); ?></span>
       </a>
     </div>
