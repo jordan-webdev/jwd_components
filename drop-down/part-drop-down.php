@@ -1,7 +1,6 @@
 <?php
 /*
  * Drop down list toggled by a button.
- * Requires Magic Animations
  */
 
 $pages = false;
@@ -20,11 +19,11 @@ if ($pages) {
 
 ?>
 <div class="drop-down">
-	<button class="drop-down__btn btn">
-		<?php echo esc_html($dd_text); ?>
+	<button class="drop-down__btn btn space-between align-center">
+		<span class="flex-grow-1 text-left"><?php echo esc_html($dd_text); ?></span>
 		<span class="fa fa-caret-down drop-down__caret"></span>
 	</button>
-	<ul class="drop-down__list magictime puffOut-slideUp">
+	<ul class="drop-down__list">
 		<?php foreach ($dd_items as $item):
       //$url = get_permalink($item->ID);
       $url = get_category_link($item->cat_ID);
@@ -32,7 +31,7 @@ if ($pages) {
     ?>
 			<li class="drop-down__item">
 				<a href="<?php echo esc_url($url); ?>">
-          <span class="fa fa-caret-right" aria-hidden="true"></span>
+          <span class="fa fa-caret-right drop-down__sub-icon" aria-hidden="true"></span>
           <?php echo esc_html($title); ?>
         </a>
 			</li>
