@@ -12,13 +12,12 @@ $tabs = array('RMA REQUEST' => 'rma-request', 'CUSTOMER SUPPORT' => 'customer-su
       <div class="tabbed-layout__tabs flex">
         <?php $i = 0 ?>
         <?php foreach ($tabs as $label => $id): ?>
-          <button
-            type="button"
-            class="tabbed-layout__tab flex-grow-1 color-white <?php echo( $i == 0 ? "active" : ""); ?>"
+          <label
+            class="tabbed-layout__tab flex-grow-1 color-white flex align-center justify-center text-center <?php echo( $i == 0 ? "active" : ""); ?>"
             data-for="<?php echo esc_attr($id); ?>"
           >
             <?php echo esc_html($label); ?>
-          </button>
+          </label>
           <?php $i++; ?>
         <?php endforeach; ?>
       </div>
