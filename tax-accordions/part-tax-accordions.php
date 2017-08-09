@@ -8,7 +8,6 @@
  */
 
 ?>
-<img id="ajax-loader" src="<?php echo get_template_directory_uri(); ?>/ajax-loader.gif" alt="loading, please wait..." />
 
 <article class="tax-accordions__accordion two-column-item-wrapper clear <?php echo get_the_category()[0]->category_nicename; ?>">
 	<header class="tax-accordions__toggler flex align-center space-between color-grey--bg pointer">
