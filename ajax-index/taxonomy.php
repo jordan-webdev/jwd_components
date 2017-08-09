@@ -24,14 +24,14 @@ $tax = $query_obj->taxonomy;
           <section class="relative">
 						<img class="two-column-item__ajax-loader js-two-column-item__ajax-loader" src="<?php echo get_template_directory_uri() . "/ajax-loader.gif"; ?>" alt="Loading...please wait" />
 
-      			<div class="clear container-site news-wrapper two-column-wrapper flex flex-wrap">
+      			<div class="clear container-site news-wrapper two-column-wrapper flex">
               <!-- Categories -->
       				<div class="two-column-item">
       					<?php get_template_part('template-parts/part', 'category-select-column'); ?>
       				</div>
 
               <!-- Results -->
-      				<div class="two-column-item js-ajax-content-container">
+      				<div class="two-column-item flex-grow-1 js-ajax-content-container">
 								<div class="height-100 js-category-results">
 		              <?php
 									while ( have_posts() ) : the_post();
@@ -60,3 +60,4 @@ $tax = $query_obj->taxonomy;
 
 <?php
 get_footer();
+
