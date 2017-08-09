@@ -21,7 +21,9 @@ $tax = $query_obj->taxonomy;
 
       <div class="site-content-wrapper">
         <div class="padding-site">
-          <section>
+          <section class="relative">
+						<img class="two-column-item__ajax-loader js-two-column-item__ajax-loader" src="<?php echo get_template_directory_uri() . "/ajax-loader.gif"; ?>" alt="Loading...please wait" />
+
       			<div class="clear container-site news-wrapper two-column-wrapper flex flex-wrap">
               <!-- Categories -->
       				<div class="two-column-item">
