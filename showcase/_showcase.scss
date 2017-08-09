@@ -1,0 +1,111 @@
+$tablet: rem(600);
+$desktop: rem(1050);
+
+.showcase {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: rem(500);
+  text-align: center;
+  padding-top: rem(35);
+  padding-bottom: rem(35);
+
+  @media screen and (min-width: $tablet) {
+    padding-top: rem(75);
+    padding-bottom: rem(75);
+  }
+
+  @media screen and (min-width: $desktop) {
+    background-attachment: fixed;
+  }
+
+  &__title {
+    margin-bottom: rem(15);
+  }
+
+  &__subtitle {
+    margin-bottom: rem(25);
+    color: darken(white, 30%);
+
+    @media screen and (min-width: $tablet) {
+      margin-bottom: rem(55);
+    }
+  }
+
+  &__img-wrapper {
+    display: inline-block;
+    background-color: white;
+    border-radius: 50%;
+    width: 205px;
+    height: 205px;
+    position: relative;
+    border: 4px solid darken(white, 30%);
+
+    &:hover {
+      border: 4px solid $color__highlight;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    @include transform(translate(-50%, -50%));
+  }
+
+  &__item-title {
+    margin-top: rem(22);
+    max-width: rem(150);
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  //Buttons
+  .slick-next {
+    right: 0;
+    font-size: rem(25);
+    top: 38%;
+    color: inherit;
+
+    @media screen and (min-width: $tablet) {
+      right: rem(-15);
+    }
+
+    &:hover {
+      color: inherit;
+    }
+
+    //Remove existing button
+    &:before {
+      display: none;
+    }
+  }
+
+  .slick-prev {
+    left: 0;
+    font-size: rem(25);
+    z-index: 2;
+    top: 38%;
+    color: inherit;
+
+    @media screen and (min-width: $tablet) {
+      left: rem(-15);
+    }
+
+    &:hover {
+      color: inherit;
+    }
+
+    //Remove existing button
+    &:before {
+      display: none;
+    }
+  }
+}
+
+.showcase__header[min-width~="400px"] {
+  display: none;
+}
