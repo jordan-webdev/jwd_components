@@ -60,4 +60,3 @@ $tax = $query_obj->taxonomy;
 
 <?php
 get_footer();
-
