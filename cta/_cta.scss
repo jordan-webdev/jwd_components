@@ -1,0 +1,41 @@
+$desktop: rem(1050);
+
+.cta {
+  $map: (320px: 30px, 620px: 90px, 835px: 155px, 1200px: 184px);
+
+  @include poly-fluid-sizing("padding-top", $map);
+
+  $map: (320px: 30px, 620px: 55px, 835px: 120px, 1200px: 154px);
+
+  @include poly-fluid-sizing("padding-bottom", $map);
+
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @media screen and (min-width: $desktop) {
+    background-attachment: fixed;
+  }
+
+  &__header {
+    padding-left: 5%;
+    padding-right: 5%;
+
+    $map: (320px: 22px, 620px: 28px, 835px: 34px, 1200px: 46px);
+
+    @include poly-fluid-sizing("font-size", $map);
+  }
+
+  &__large {
+    margin-bottom: rem(15);
+  }
+
+  &__small {
+    font-size: 50%;
+  }
+
+  &__btn {
+    margin-top: rem(35);
+  }
+}
