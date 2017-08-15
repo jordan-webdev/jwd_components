@@ -1,0 +1,54 @@
+$gutter: 3%;
+
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  left: -999rem;
+  right: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.3s, left 0s 0.3s;
+  padding-left: rem(30);
+  padding-right: rem(30);
+  z-index: $z-sticky;
+  border-top: 3px solid $color__highlight;
+  display: none;
+
+  @media screen and (min-width: $breakpoint__mobile-menu) {
+    @include flexbox;
+  }
+
+  &.active {
+    left: 0;
+    opacity: 1;
+    transition: opacity 0.5s, left 0s;
+  }
+
+  &__menu > li {
+    margin-right: $gutter;
+    padding-top: rem(35);
+    padding-bottom: rem(35);
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__logo {
+    margin-right: $gutter;
+
+    @include flex-basis(rem(155));
+  }
+
+  &__btn {
+    margin-left: rem(10);
+  }
+
+  /*&__contact {
+    display: none;
+
+    @media screen and (min-width: rem(1200)) {
+      display: inline-block;
+    }
+  }*/
+}
