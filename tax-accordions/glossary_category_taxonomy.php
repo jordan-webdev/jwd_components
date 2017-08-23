@@ -1,8 +1,8 @@
 // Add the "glossary_category" taxonomy
-function create_glossary_category_taxonomy() {
+function create_glossary_category_hierarchical_taxonomy() {
 
   $labels = array(
-    'name' => _x( 'Glossary', 'taxonomy general name' ),
+    'name' => _x( 'Glossary Category', 'taxonomy general name' ),
     'singular_name' => _x( 'Glossary Category', 'taxonomy singular name' ),
     'search_items' =>  __( 'Search Glossary Categories' ),
     'all_items' => __( 'All Glossary Categories' ),
@@ -24,8 +24,7 @@ function create_glossary_category_taxonomy() {
       'show_ui' => true,
       'show_admin_column' => true,
       'query_var' => true,
-      'rewrite' => array( 'slug' => 'blog' ),
     ));
 
 }
-add_action( 'init', 'create_glossary_category_taxonomy', 0 );
+add_action( 'init', 'create_glossary_category_hierarchical_taxonomy', 0 );
