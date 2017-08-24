@@ -10,7 +10,9 @@
       <div class="single-news-media__thumbnail-wrapper">
     		<?php the_post_thumbnail(); ?>
       </div>
-  		<?php the_title( '<h2 class="color-secondary header-fluid-sizing single-news-media__title">', '</h2>' ); ?>
+      <!-- Blog Category -->
+      <span class="block color-primary font-14 mar-b-15"><?php echo get_the_terms($post->ID, 'blog_category')[0]->name; ?></span>
+  		<?php the_title( '<h1 class="color-secondary font-18">', '</h1>' ); ?>
   		<div class="blog-preview-publish-wrapper">
   			<div class="blog-preview-date-wrapper">
   				<span class="fa fa-calendar-o color-primary" aria-hidden="true"></span>
