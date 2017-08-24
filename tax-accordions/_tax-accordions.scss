@@ -1,0 +1,31 @@
+.tax-accordions {
+  &__accordion {
+    &.active {
+      & .tax-accordions__toggler {
+        background-color: $color__primary;
+      }
+
+      & .tax-accordions__arrow {
+        @include transform(rotateZ(0));
+      }
+
+      & h3 {
+        color: white;
+      }
+    }
+  }
+
+  &__h3 {
+    transition: color 0.3s;
+  }
+
+  &__toggler {
+    transition: background-color 0.3s;
+  }
+
+  &__arrow {
+    transition: transform 0.3s;
+
+    @include transform(rotateZ(180deg));
+  }
+}
