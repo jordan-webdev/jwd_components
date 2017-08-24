@@ -31,7 +31,7 @@
         $cat_id = $current_blog_category->term_id;
         $cat_name = $current_blog_category->name;
         $cat_slug = $current_blog_category->slug;
-        $cat_link = get_term_link($cat_id, 'blog');
+        $cat_link = get_term_link($cat_id, 'blog_category');
 
 
         //$cat_slug = $cat->slug;
