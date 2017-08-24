@@ -7,7 +7,7 @@
  * @package jwd
  */
 
-$blog_category = get_the_terms($post->ID, 'blog')[0];
+$blog_category = get_the_terms($post->ID, 'blog_category')[0];
 $blog_category_slug = $blog_category->slug;
 $single_slug = $post->post_name;
 
