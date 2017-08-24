@@ -14,7 +14,7 @@ $query_obj = get_queried_object();
 $term_name = $query_obj->name;
 $taxonomy = $query_obj->taxonomy;
 // If it's a single blog post, the query object will not contain data about the taxonomy, so it's specified here
-$taxonomy = $taxonomy ? $taxonomy : 'blog';
+$taxonomy = $taxonomy ? $taxonomy : 'blog_category';
 $all_term = get_term_by( 'slug', 'all', $taxonomy );
 $all_term_id = $all_term->term_id;
 
