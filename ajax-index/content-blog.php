@@ -1,6 +1,6 @@
 <?php
 /*
- * Content for the single news/media page
+ * Content for the single blog page
  */
 ?>
 
