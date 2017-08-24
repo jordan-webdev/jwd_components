@@ -1,4 +1,4 @@
-$categories_shift: rem(850);
+$categories_shift: rem(1086);
 
 .two-column-wrapper {
   margin-bottom: 35px;
@@ -38,6 +38,8 @@ $categories_shift: rem(850);
   width: calc(99.99% * 3/4);
   position: relative;
   max-width: 1000px;
+  border-left: 1px solid $color__grey;
+  padding-left: rem(15);
 }
 
 .two-column-item .attachment-post-thumbnail {
@@ -65,7 +67,7 @@ $categories_shift: rem(850);
   transform: translate(0, -50%);
 }
 
-#category-wrapper h2 {
+#category-wrapper .blog-category-toggler {
   margin: 0 0 15px 15px;
 }
 
@@ -133,8 +135,9 @@ $categories_shift: rem(850);
 
   #category-wrapper {
     margin-right: 0;
+    padding-right: 0;
 
-    & h2 {
+    & .blog-category-toggler {
       position: relative;
       cursor: pointer;
       width: 158px;
@@ -174,6 +177,8 @@ $categories_shift: rem(850);
   .two-column-item:nth-child(2) {
     width: 100%;
     padding-bottom: 1px;
+    padding-left: 0;
+    border-left: none;
   }
 
   #categories-wrapper {
@@ -242,13 +247,6 @@ $categories_shift: rem(850);
   top: 0 !important;
 }
 
-.blog-content p {
-  font-size: 16px;
-  line-height: 1.75;
-  font-family: "lato", sans-serif;
-  font-weight: 400;
-}
-
 .blog-preview-item:first-child {
   margin-right: 5%;
   float: left;
@@ -259,10 +257,6 @@ $categories_shift: rem(850);
 .blog-preview-item:first-child img {
   max-width: 100%;
   height: auto;
-}
-
-.blog-preview-item:last-child {
-  overflow: auto;
 }
 
 .blog-preview-item a,
@@ -337,6 +331,19 @@ $categories_shift: rem(850);
   &__back-link {
     margin-top: rem(15);
   }
+}
+
+.about-claudia__description {
+  max-width: rem(400);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.category-circle {
+  width: rem(50);
+  height: rem(50);
+  border-radius: 50%;
+  border: 2px solid $color__grey;
 }
 
 /* ======================================================== */
