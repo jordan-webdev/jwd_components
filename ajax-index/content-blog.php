@@ -26,7 +26,7 @@
     <!-- Go Back link -->
   	<footer class="entry-footer">
       <?php
-        $blog_categories = get_the_terms($post->ID, 'blog');
+        $blog_categories = get_the_terms($post->ID, 'blog_category');
         $current_blog_category = $blog_categories[0];
         $cat_id = $current_blog_category->term_id;
         $cat_name = $current_blog_category->name;
