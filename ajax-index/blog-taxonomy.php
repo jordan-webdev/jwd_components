@@ -1,4 +1,4 @@
-// Add the "blog" taxonomy
+// Add the "Blog Category" taxonomy
 function create_blog_hierarchical_taxonomy() {
 
   $labels = array(
@@ -16,7 +16,7 @@ function create_blog_hierarchical_taxonomy() {
   );
 
   register_taxonomy(
-    'blog',
+    'blog_category',
     'blog_posts',
     array(
       'hierarchical' => true,
