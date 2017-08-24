@@ -1,5 +1,4 @@
 (function($) {
-
   /* ********** *CATEGORY SELECT + DESCRIPTION ******************* */
 
   //Update the hrefs for filter links (if any) for the first time
@@ -62,6 +61,8 @@
       // Allow clicking again
       $('.drop-down--filters__sub-item.not-clickable, .drop-down__all.not-clickable').removeClass('not-clickable');
 
+      a2a.init('page');
+
     });
 
     //Pagination
@@ -97,9 +98,9 @@
   })
 
   //Categories dropdown
-  var mq = window.matchMedia("(max-width: 850px)");
+  var mq = window.matchMedia("(max-width: 1086px)");
   if (mq.matches) {
-    $('#categories-wrapper').slideUp(1, function() {});
+    $('#categories-wrapper').slideUp(1);
     $('.js-categories-wrapper-toggle, .js-category-selector-link').on('click', function() {
       $('#categories-wrapper').slideToggle();
       $('.js-categories-wrapper-toggle').toggleClass('active');
