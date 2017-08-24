@@ -9,7 +9,6 @@ add_filter('language_attributes', 'add_opengraph_doctype');
 function insert_fb_in_head() {
     global $post;
     if ( !is_singular('blog_posts')){
-      //if it is not a post or a page
       return;
     }
     echo '<meta property="og:title" content="' . get_the_title() . '"/>';
