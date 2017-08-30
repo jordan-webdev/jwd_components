@@ -15,15 +15,12 @@ $categories_shift: rem(1086);
   font-size: 20px;
 }
 
-.blog-item-padding-wrapper:first-child {
-  padding-top: rem(15);
-}
-
 .blog-item-wrapper {
   padding: 15px;
   margin-bottom: 15px;
   position: relative;
   background-color: white;
+  border-bottom: 1px solid $color__grey;
 
   &:last-child {
     margin-bottom: 0;
@@ -273,12 +270,12 @@ $categories_shift: rem(1086);
     text-align: center;
     width: 100%;
     max-width: 350px;
-    margin: 0 auto 15px;
+    margin: 0;
   }
 
   .blog-preview-item:last-child {
     overflow: visible;
-    text-align: center;
+    text-align: left;
   }
 }
 
@@ -325,9 +322,14 @@ $categories_shift: rem(1086);
 }
 
 .about-claudia__description {
+  width: 100%;
   max-width: rem(400);
   margin-left: auto;
   margin-right: auto;
+
+  @media screen and (min-width: $categories_shift) {
+    max-width: 100%;
+  }
 }
 
 .category-circle {
