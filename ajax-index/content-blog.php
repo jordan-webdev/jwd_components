@@ -32,7 +32,7 @@
   	</div><!-- .entry-content -->
 
     <!-- Go Back link + Social Media -->
-  	<footer class="entry-footer flex space-between">
+  	<footer class="entry-footer flex space-between flex-wrap">
       <?php
         $blog_categories = get_the_terms($post->ID, 'blog_category');
         $current_blog_category = $blog_categories[0];
