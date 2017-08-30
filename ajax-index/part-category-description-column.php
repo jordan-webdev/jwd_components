@@ -37,14 +37,14 @@ $single_slug = $post->post_name;
 			$link = $link ? $link : get_the_permalink();
 		?>
 
-    <div class="color-grey--bg pad-b-15 pad-l-15 pad-r-15 blog-item-padding-wrapper">
+    <div class="pad-b-15 pad-l-15 pad-r-15 blog-item-padding-wrapper">
   		<article class="blog-item-wrapper clear <?php echo $blog_category_slug; ?> all">
   			<div class="blog-preview-item">
   				<?php if ($external_link) : ?>
   					<a href="<?php echo esc_url($link); ?>" target="_blank" rel="noopener noreferrer">
   						<?php
   							if ($preview) {
-  								echo '<img class="news-thumb-preview" src="' . $preview['url'] . '" alt="' . $preview['alt'] . '" />';
+  								echo '<img class="news-thumb-preview block" src="' . $preview['url'] . '" alt="' . $preview['alt'] . '" />';
   							}
   						?>
   					</a>
@@ -59,7 +59,7 @@ $single_slug = $post->post_name;
   						<?php
   							$preview = get_field('preview_image');
   							if ($preview)
-  								echo '<img class="news-thumb-preview" src="' . $preview['url'] . '" alt="' . $preview['alt'] . '" />';
+  								echo '<img class="news-thumb-preview block" src="' . $preview['url'] . '" alt="' . $preview['alt'] . '" />';
   						?>
   					</a>
   				<?php endif; ?>
