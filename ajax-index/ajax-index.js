@@ -61,7 +61,14 @@
       // Allow clicking again
       $('.drop-down--filters__sub-item.not-clickable, .drop-down__all.not-clickable').removeClass('not-clickable');
 
-      a2a.init('page');
+      if (typeof a2a !== "undefined"){
+        a2a.init('page');
+      }
+
+      //Scroll page
+      $('html,body').animate({
+        scrollTop: ($('#js-category-wrapper-title').offset().top - 150)
+      }, 'slow');
 
     });
 
@@ -76,11 +83,6 @@
     $('title').load(href + ' title', function(data) {
       document.title = $(this).text();
     })
-
-    //Scroll page
-    $('html,body').animate({
-      scrollTop: ($('#category-wrapper').offset().top - 150)
-    }, 'slow');
 
     return false;
   });
