@@ -55,7 +55,7 @@ $bg = get_field('page_bg', $tax.'_'.$tax_id);
 
               <!-- Results -->
       				<div class="two-column-item flex-grow-1 js-ajax-content-container">
-								<div <?php echo ($is_blog_category ? "id=\"js-blog-listing-results\"" : "" ); ?>class="height-100 js-category-results">
+								<div id="js-blog-listing-results" class="height-100 js-category-results">
 		              <?php
 									while ( have_posts() ) : the_post();
 											if ($is_blog_category){
