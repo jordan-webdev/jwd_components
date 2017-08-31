@@ -10,7 +10,7 @@
 
       <!-- Thumbnail -->
       <div class="single-news-media__thumbnail-wrapper alignleft">
-    		<?php the_post_thumbnail(); ?>
+    		<?php the_post_thumbnail('post-thumbnail', array('class' => 'js-blog-single-thumb')); ?>
       </div>
 
       <!-- Blog Category -->
