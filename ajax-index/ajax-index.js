@@ -110,7 +110,7 @@
 
   function scroll_to_results(){
     //Scroll page
-    var el_to_scroll = $('#js-blog-listing-results').length > 0 ? $('#js-blog-listing-results') : $('#js-category-wrapper-title');
+    var el_to_scroll = $('#js-blog-listing-results');
     $('html,body').animate({
       scrollTop: (el_to_scroll.offset().top - 150)
     }, 'slow');
