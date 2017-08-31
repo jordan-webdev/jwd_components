@@ -69,6 +69,14 @@
         a2a.init('page');
       }
 
+      // Add height to the image loaded with AJAX, to accomodate for Safari issue with AJAX-loaded images that have srcset
+      add_height_to_thumbnail();
+
+    }); // End load
+
+    // Add height to the image loaded with AJAX, to accomodate for Safari issue with AJAX-loaded images that have srcset
+    $(window).on('resize', function(){
+      add_height_to_thumbnail();
     });
 
     //Pagination
@@ -106,6 +114,21 @@
       $('#categories-wrapper').slideToggle();
       $('.js-categories-wrapper-toggle').toggleClass('active');
     });
+  }
+
+  function add_height_to_thumbnail(){
+    var images = [$('.js-blog-single-thumb')];
+    $.each(images, function(){
+      $(this).each(function(i, v){
+        var width = $(v).attr('width');
+        var height = $(v).attr('height');
+        var ratio = height / width;
+        var actual_width = $(v).width();
+        var new_height = actual_width * ratio;
+        $(v).height(new_height);
+      });
+    });
+
   }
 
   function scroll_to_results(){
