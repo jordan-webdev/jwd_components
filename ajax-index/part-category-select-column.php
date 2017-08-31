@@ -22,7 +22,7 @@ $all_term_id = $all_term->term_id;
 
 <div id="category-wrapper">
 
-	<h2 class="font-16 bold color-secondary js-categories-wrapper-toggle">
+	<h2 id="js-category-wrapper-title" class="font-16 bold color-secondary js-categories-wrapper-toggle">
     CATEGORIES
     <span class="screen-reader-text">Click to expand categories</span>
   </h2>
