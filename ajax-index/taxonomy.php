@@ -54,8 +54,8 @@ $bg = get_field('page_bg', $tax.'_'.$tax_id);
       				</div>
 
               <!-- Results -->
-      				<div class="two-column-item flex-grow-1 js-ajax-content-container">
-								<div id="js-blog-listing-results" class="height-100 js-category-results">
+      				<div id="js-blog-listing-results" class="two-column-item flex-grow-1 js-ajax-content-container">
+								<div class="height-100 js-category-results">
 		              <?php
 									while ( have_posts() ) : the_post();
 											if ($is_blog_category){
