@@ -22,57 +22,61 @@
     $('.drop-down--filters__sub-item, .drop-down__all').addClass('not-clickable');
 
     // Results
-    target.fadeOut();
-    // Show Ajax loader
-    $('.two-column-item__ajax-loader').addClass('active');
-    target.load(href + ' .js-category-results', function(data) {
-      // Hide Ajax loader
-      $('.two-column-item__ajax-loader').removeClass('active');
-      //var newURL = singleSlug ? '/new_era/blog/' + slug + '/' + singleSlug:  '/new_era/blog/' + slug + '/';
-      var getUrl = window.location;
-      var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
-      //var newURL = href.replace(baseUrl, '');
-      var newURL = href.replace('https://dolcedev.com', '');
-      window.history.replaceState({}, '', newURL);
+    target.fadeOut(300, function(){
+      // Show Ajax loader
+      $('.two-column-item__ajax-loader').addClass('active');
+      target.load(href + ' .js-category-results', function(data) {
+        // Hide Ajax loader
+        $('.two-column-item__ajax-loader').removeClass('active');
+        //var newURL = singleSlug ? '/new_era/blog/' + slug + '/' + singleSlug:  '/new_era/blog/' + slug + '/';
+        var getUrl = window.location;
+        var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+        //var newURL = href.replace(baseUrl, '');
+        var newURL = href.replace('https://dolcedev.com', '');
+        window.history.replaceState({}, '', newURL);
 
-      // Colour toggle the selected link for filters (if any)
-      clickedLink.prev('.js-filter-box').toggleClass('is-active');
+        // Colour toggle the selected link for filters (if any)
+        clickedLink.prev('.js-filter-box').toggleClass('is-active');
 
-      //Remove the colour toggle for all if all was not selected, or remove it from every other one if all was selected
-      if ( ! (clickedLink.hasClass('js-filter-link-all') || clickedLink.hasClass('js-pagination-link')) ) {
-        $('.js-filter-box-all.is-active').removeClass('is-active');
-      }else{
-        $('.js-filter-box.is-active').not('.js-filter-box-all').removeClass('is-active');
-      }
+        //Remove the colour toggle for all if all was not selected, or remove it from every other one if all was selected
+        if ( ! (clickedLink.hasClass('js-filter-link-all') || clickedLink.hasClass('js-pagination-link')) ) {
+          $('.js-filter-box-all.is-active').removeClass('is-active');
+        }else{
+          $('.js-filter-box.is-active').not('.js-filter-box-all').removeClass('is-active');
+        }
 
-      //Update the hrefs for filter links (if any)
-      updateFilterHrefs(false);
+        //Update the hrefs for filter links (if any)
+        updateFilterHrefs(false);
 
-      //Give phones some extra time to load
-      let mq = window.matchMedia("(max-width: 450px)");
-      if (mq.matches) {
-        setTimeout(function() {
-          target.fadeIn('slow', function(){
+        //Give phones some extra time to load
+        let mq = window.matchMedia("(max-width: 450px)");
+        if (mq.matches) {
+          setTimeout(function() {
+            target.fadeIn(300, function(){
+              scroll_to_results();
+            });
+          }, 200);
+        } else {
+          target.fadeIn(300, function(){
             scroll_to_results();
           });
-        }, 200);
-      } else {
-        target.fadeIn('slow', function(){
-          scroll_to_results();
-        });
-      }
+        }
 
-      // Allow clicking again
-      $('.drop-down--filters__sub-item.not-clickable, .drop-down__all.not-clickable').removeClass('not-clickable');
+        // Allow clicking again
+        $('.drop-down--filters__sub-item.not-clickable, .drop-down__all.not-clickable').removeClass('not-clickable');
 
-      if (typeof a2a !== "undefined"){
-        a2a.init('page');
-      }
+        if (typeof a2a !== "undefined"){
+          a2a.init('page');
+        }
 
-      // Add height to the image loaded with AJAX, to accomodate for Safari issue with AJAX-loaded images that have srcset
-      add_height_to_thumbnail();
+        // Add height to the image loaded with AJAX, to accomodate for Safari issue with AJAX-loaded images that have srcset
+        setTimeout(function(){
+          add_height_to_thumbnail();
+        }, 50);
 
-    }); // End load
+      }); // End load
+    });
+
 
     // Add height to the image loaded with AJAX, to accomodate for Safari issue with AJAX-loaded images that have srcset
     $(window).on('resize', function(){
