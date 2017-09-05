@@ -54,6 +54,11 @@ $mobile_last_item: 6;
       margin-right: 0;
     }
   }
+  
+  &--mobile &__widget-item {
+    // IE
+    max-width: 100%;
+  }
 
   @media screen and (min-width: $tablet) {
     @include flex-wrap(wrap);
