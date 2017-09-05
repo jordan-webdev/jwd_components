@@ -9,7 +9,7 @@
 
     <!-- Thumbnail -->
     <div class="single-news-media__thumbnail-wrapper alignleft">
-  		<?php the_post_thumbnail('post-thumbnail', array('class' => 'js-blog-single-thumb')); ?>
+  		<?php the_post_thumbnail('post-thumbnail', array('class' => 'js-blog-single-thumb no-lazy')); ?>
     </div>
 
     <!-- Blog Category -->
@@ -58,7 +58,7 @@
     >
 			<span class="fa fa-caret-left color-primary" aria-hidden="true"></span>
 			<span class="color-primary">Back to <span class="blog-category"><?php echo $cat_name; ?></span></span>
-			<span class="blog-category-nice none"><?php echo get_the_category()[0]->category_nicename; ?></span>
+			<span class="blog-category-nice none"></span>
 		</a>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
