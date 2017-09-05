@@ -83,10 +83,12 @@
 
     //Pagination
     var paginationTarget = $('.ajax-pagination');
-    paginationTarget.fadeOut();
-    paginationTarget.load(href + ' .js-ajax-pagination', function() {
-      paginationTarget.fadeIn();
+    paginationTarget.fadeTo(300, 0.3, function(){
+      paginationTarget.load(href + ' .js-ajax-pagination', function() {
+        paginationTarget.fadeTo(300, 1);
+      });
     });
+
 
     //Document title
     $('title').load(href + ' title', function(data) {
@@ -94,7 +96,7 @@
     })
 
     return false;
-  });
+  }); // End link/button click
 
   // Color highlighting
   $('#categories span').click(function() {
