@@ -22,7 +22,7 @@
     $('.drop-down--filters__sub-item, .drop-down__all').addClass('not-clickable');
 
     // Results
-    target.fadeOut(300, function(){
+    target.fadeTo(300, 0.3, function(){
       // Show Ajax loader
       $('.two-column-item__ajax-loader').addClass('active');
       target.load(href + ' .js-category-results', function(data) {
@@ -51,13 +51,11 @@
         //Give phones some extra time to load
         let mq = window.matchMedia("(max-width: 450px)");
         if (mq.matches) {
-          setTimeout(function() {
-            target.fadeIn(300, function(){
-              scroll_to_results();
-            });
-          }, 200);
+          target.fadeTo(300, 1, function(){
+            scroll_to_results();
+          });
         } else {
-          target.fadeIn(300, function(){
+          target.fadeTo(300, 1, function(){
             scroll_to_results();
           });
         }
