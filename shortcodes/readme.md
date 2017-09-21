@@ -32,13 +32,23 @@
     -show-p: Can be set to anything. Standard practice to use "true". If set, <p> tags will be displayed. It is useful to set this if the content will be text. If it is something else, such as a list, it may be best to set it.
 
   ### usage:
+  Without embedded shortcodes:
     [half-items][half]
-      Test
-      Test
+    Test
+    Test
     [/half][half]
-      Test
-      Test
+    Test
+    Test
     [/half][/half-items]
+    
+  With embedded shortcodes:
+  
+    [half-items][half]
+    Test
+    Test
+    [/half][half-shortcode]
+    [my-shortcode]
+    [/half-shortcode][/half-items]
 
 ---
 
