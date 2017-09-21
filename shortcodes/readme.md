@@ -8,19 +8,19 @@
   ## usage:
     [big size="2rem"]Big text![/big]
 
-================================================
+---
 
-[center]
-  Description:
+# [center]
+  ## Description:
     Center some text
     
-  att:
+  ## att:
     -Type: Change the HTML element being used (default: "p")
     
-  Usage:
+  ## Usage:
     [center]Your text to be centered goes here[/center]
     
-================================================
+---
 
 [half-items]
   Description: 
