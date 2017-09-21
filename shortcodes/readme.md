@@ -42,7 +42,6 @@
     [/half][/half-items]
     
   With embedded shortcodes:
-  
     [half-items][half]
     Test
     Test
