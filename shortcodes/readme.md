@@ -64,7 +64,7 @@
   ### Usage: 
     [quote author="Jordan Webdev"]This is a quote![/quote]
 
-# Requests
+# *** Requests ***
 
 (please follow the above format for new requests)
 
