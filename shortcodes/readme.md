@@ -1,11 +1,11 @@
 # [big]
-  Description: 
+  ## Description: 
     Create text that is a different font size.
 
-  att:
+  ## att:
     -size: the font size to be entered for the text (try not to use this too often, as it sets inline-style (non-cacheable)
   
-  usage:
+  ## usage:
     [big size="2rem"]Big text![/big]
 
 ================================================
