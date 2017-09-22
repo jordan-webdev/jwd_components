@@ -1,5 +1,13 @@
 # Shortcodes
 
+## [align-center]
+  ### Description:
+    Aligns the content vertically center within itself
+  
+  ### att:
+    -Type: The HTML element to use (default: p)
+    -strip-p: Whether or not to strip auto-generated p tags (default: true)
+
 ## [big]
   ### Description: 
     Create text that is a different font size.
