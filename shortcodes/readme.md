@@ -78,11 +78,11 @@
     -strip-p: Set to anything (i.e. "true") to remove all auto-generated "<p>" tags.
     
   ### Usage:
-    [highlight_bg strip-p="true"]
+    [highlight-bg strip-p="true"]
 
       Your text here (may be formatted, i.e. "header", in WYSIWYG editor)
 
-    [/highlight_bg]
+    [/highlight-bg]
     
   
 
