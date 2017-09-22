@@ -6,7 +6,7 @@
   
   ### att:
     -Type: The HTML element to use (default: p)
-    -strip-p: Whether or not to strip auto-generated p tags (default: true)
+    -strip-p: Set to "false" to keep auto-generated "<p>" tags (default: true)
     
   ### Usage:
     [align-center](some image) some text to be aligned in the center of the image[/align-center]
@@ -75,10 +75,10 @@
      Adds a grey background to the text (as specified in the style guide for the default grey)
      
   ### Att:
-    -strip-p: Set to anything (i.e. "true") to remove all auto-generated "<p>" tags.
+    -strip-p: Set to false to keep auto-generated "<p>" tags (defaults to "true")
     
   ### Usage:
-    [highlight-bg strip-p="true"]
+    [highlight-bg]
 
       Your text here (may be formatted, i.e. "header", in WYSIWYG editor)
 
