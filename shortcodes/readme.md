@@ -1,4 +1,4 @@
-# Shortcodes 2222
+# Shortcodes
 
 ## [align-center]
   ### Description:
