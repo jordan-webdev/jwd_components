@@ -5,11 +5,12 @@
     Aligns the content vertically center within itself
   
   ### att:
+    -pad-l: Padding to add to the left (i.e. pad-l="15")
     -Type: The HTML element to use (default: p)
     -strip-p: Set to "false" to keep auto-generated "<p>" tags (default: true)
     
   ### Usage:
-    [align-center](some image) some text to be aligned in the center of the image[/align-center]
+    [align-center pad-l="15"](some image) some text to be aligned in the center of the image[/align-center]
 
 ## [big]
   ### Description: 
@@ -92,6 +93,16 @@
     The text within this shortcode will not wrap. Useful if you need text to always display on a single line. Be careful, as this can cause issues on mobile if the text is too long
 
 ---
+
+## [social-media]
+  ### Description
+    Displays a list of social media icons, with links. Set up in theme settings first.
+    
+  ### atts:
+    -pad-l: Padding to add to the left (i.e. pad-l="15")
+    
+  ### usage:
+    [social-media pad-l="15"]
 
 ## [quote]
   ### Description:
