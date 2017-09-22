@@ -7,6 +7,9 @@
   ### att:
     -Type: The HTML element to use (default: p)
     -strip-p: Whether or not to strip auto-generated p tags (default: true)
+    
+  ### Usage:
+    [align-center](some image) some text to be aligned in the center of the image[/align-center]
 
 ## [big]
   ### Description: 
