@@ -59,6 +59,22 @@
 
 ---
 
+## [highlight-bg]
+  ### Description:
+     Adds a grey background to the text (as specified in the style guide for the default grey)
+     
+  ### Att:
+    -strip-p: Set to anything (i.e. "true") to remove all auto-generated "<p>" tags.
+    
+  ### Usage:
+    [highlight_bg strip-p="true"]
+
+      Your text here (may be formatted, i.e. "header", in WYSIWYG editor)
+
+    [/highlight_bg]
+    
+  
+
 ## [nowrap]
   ### Description:
     The text within this shortcode will not wrap. Useful if you need text to always display on a single line. Be careful, as this can cause issues on mobile if the text is too long
@@ -66,7 +82,7 @@
 ---
 
 ## [quote]
-  Description:
+  ### Description:
     Create a quote.
 
   ### att:
