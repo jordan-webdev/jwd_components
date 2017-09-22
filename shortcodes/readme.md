@@ -76,6 +76,7 @@
      
   ### Att:
     -strip-p: Set to false to keep auto-generated "<p>" tags (defaults to "true")
+    -type: The HTML element to use (default: "div") 
     
   ### Usage:
     [highlight-bg]
