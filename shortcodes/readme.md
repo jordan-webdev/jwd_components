@@ -72,16 +72,19 @@
 
 ## [highlight-bg]
   ### Description:
-     Adds a grey background to the text (as specified in the style guide for the default grey)
+     Adds a grey background to the content (as specified in the style guide for the default grey)
      
   ### Att:
-    -strip-p: Set to false to keep auto-generated "<p>" tags (defaults to "true")
-    -type: The HTML element to use (default: "div") 
+    -pad-t: Set a padding top (i.e. pad-t="15").
+    -pad-b: Set a padding top (i.e. pad-b="15").
+    -strip-p: Set to false to keep auto-generated "<p>" tags (defaults to "true").
+    -type: The HTML element to use (default: "div") .
     
   ### Usage:
-    [highlight-bg]
+    [highlight-bg pad-t="15" pad-b="10"]
 
       Your text here (may be formatted, i.e. "header", in WYSIWYG editor)
+      [your-shortcode-here]
 
     [/highlight-bg]
     
