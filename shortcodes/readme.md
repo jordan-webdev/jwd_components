@@ -17,7 +17,7 @@
     Create text that is a different font size.
 
   ### att:
-    -size: the font size to be entered for the text (try not to use this too often, as it sets inline-style (non-cacheable)
+    -size: the font size to be entered for the text (try not to use this too often, as it sets inline-style (non-cacheable).
   
   ### usage:
     [big size="2rem"]Big text![/big]
@@ -35,6 +35,17 @@
     [center]Your text to be centered goes here[/center]
     
 ---
+
+## [google-map]
+  ### Description:
+    Displays a Google Map. Set up the API key (required) and icon (optional) in theme options first.
+    
+  ### Att:
+    -lat: the latitude
+    -long: the longitude
+    
+  ### Usage:
+    [google-map lat="LATNUM" long="LONGNUM"]
 
 ## [half-items]
   ### Description: 
